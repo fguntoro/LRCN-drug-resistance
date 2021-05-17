@@ -720,7 +720,7 @@ def run_bayesian(df_train, labels):
     #     y_train = y_train2
     #     y_test = y_test2
     #     y_val = y_val2
-    #     BO_SVM()
+         BO_SVM()
         # global rf_val_score, rf_test_score
         # print("rf_val_score")
         # print(rf_val_score)

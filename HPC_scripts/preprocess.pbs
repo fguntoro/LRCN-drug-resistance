@@ -1,0 +1,20 @@
+#PBS -l walltime=00:10:00
+#PBS -l select=1:ncpus=1:mem=10gb
+
+module load anaconda3/personal
+
+source activate mres-project2
+
+echo "Running script"
+
+cd $HOME/Project2/LRCN-drug-resistance/
+python3 main.py > train_file.txt
+
+echo "Script has finished"
+
+echo "Copying files to TMPDIR"
+
+mkdir $WORK/$PBS_JOBID
+cp * $WORK/$PBS_JOBID
+
+conda deactivate

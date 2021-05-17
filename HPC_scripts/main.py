@@ -12,5 +12,3 @@ from dataset_creator import gene_dataset_creator
 df = pd.read_csv("Data/AllLabels.csv")
 f = pd.read_csv("Data/gene_data.csv")
 df_train, labels = data_preprocess.process(38, gene_dataset=True)
-df_instudy = df[df["id"].isin(df_train.index.values)]
-df_instudy.sum(axis = 0, skipna = True)
