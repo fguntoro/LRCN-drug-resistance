@@ -14,12 +14,12 @@ def train():
     # df_train, labels = data_preprocess.process(38)
     # source_analysis.main(df_train)
     # df_train, labels = data_preprocess.process(38, shuffle_operon_group=True)
-    ML_methods.model_run(df_train, labels) # BO for ML and GBT
-    model_gene_based.run_model(df_train, labels, epochs)
-    wide_n_deep.run_bayesian(df_train, labels) # BO for wide n deep method
-    model_gene_based.run_bayesian(df_train, labels) # main diff in data folding nested CV # init_point 15, n_iter 15 # run_one_fold also run_k_fold and run_single_fold (section.3.5 help accuracy)
-    model_gene_based.run_bayesian_single(df_train, labels)
-    model_gene_based.run_all(df_train, labels, epochs)
+    # ML_methods.model_run(df_train, labels) # BO for ML and GBT
+    # model_gene_based.run_model(df_train, labels, epochs)
+    # wide_n_deep.run_bayesian(df_train, labels) # BO for wide n deep method
+    # model_gene_based.run_bayesian(df_train, labels) # main diff in data folding nested CV # init_point 15, n_iter 15 # run_one_fold also run_k_fold and run_single_fold (section.3.5 help accuracy)
+    # model_gene_based.run_bayesian_single(df_train, labels)
+    # model_gene_based.run_all(df_train, labels, epochs)
     model_gene_based.run_model_kfold(df_train,labels,epochs)
 
 
@@ -53,7 +53,7 @@ def train():
     #                                       k=20)
     # base_approach.find_feature_importance(file_name='feature_importance/score_results/feature_scores_lime_train.csv',
     #                                       k=20)
-    lime.main_function(df_train, labels)
+    # lime.main_function(df_train, labels)
 
 
 def train_shuffle():

@@ -11,6 +11,7 @@ from loading_data import data_preprocess
 
 
 def masked_loss_function(y_true, y_pred):
+    y_pred = K.cast(y_pred, K.floatx())
     mask = K.cast(K.not_equal(y_true, -1), K.floatx())
     return K.binary_crossentropy(y_true * mask, y_pred * mask)
 

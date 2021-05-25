@@ -592,7 +592,7 @@ def BO_GBT():
     for i, res in enumerate(optimizer.res):
         print("Iteration {}: \n\t{}".format(i, res), flush=True)
 
-    print("resultttttttttttttt RF" + str(i), flush=True)
+    print("resultttttttttttttt GBT" + str(i), flush=True)
     print(optimizer.max, flush=True)
 
 
@@ -660,9 +660,10 @@ def run_bayesian(df_train, labels):
         y_test = y_test2
         y_val = y_val2
         # loaded_model = pickle.load(open('gbt0uapobneyqjzmpcasd.sav', 'rb'))
-        # result = loaded_model.predict(X_test)
-        # print(result)
-        BO_GBT()
+        loaded_model = pickle.load(open('gbt0vshfzjsqdrfvjecxwdyp.sav', 'rb'))
+        result = loaded_model.predict(X_test)
+        print(result)
+        # BO_GBT()
 
     # print("LR")
     # for i in range(0, 10):
@@ -720,7 +721,7 @@ def run_bayesian(df_train, labels):
     #     y_train = y_train2
     #     y_test = y_test2
     #     y_val = y_val2
-         BO_SVM()
+        BO_SVM()
         # global rf_val_score, rf_test_score
         # print("rf_val_score")
         # print(rf_val_score)
